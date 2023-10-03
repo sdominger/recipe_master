@@ -1,0 +1,10 @@
+RewriteEngine on
+
+RewriteRule ^home$ index.php? [L]
+
+RewriteRule ^recipes$ index.php?recipes=index [L]
+
+RewriteRule ^chefs$ index.php?chefs=index [L]
+
+RewriteCond %{REQUEST_URI} !\.(js|css|jpg|gif|zip|png|pdf)$ [NC]
+RewriteRule ^(.*)$ index.php [L]

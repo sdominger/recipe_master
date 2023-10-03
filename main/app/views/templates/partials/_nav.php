@@ -2,7 +2,7 @@
   <div class="container mx-auto px-4">
     <div class="flex justify-between items-center py-4">
       <div class="flex items-center">
-        <a class="text-white font-bold text-xl flex items-center" href="#">
+        <a class="text-white font-bold text-xl flex items-center" href="home">
           <i class="fas fa-utensils text-yellow-500 mr-2"></i> RECIPE MASTER
         </a>
       </div>
@@ -16,14 +16,14 @@
       </div>
       <div class="hidden md:flex items-center space-x-4">
         <input type="text" placeholder="Rechercher une recette..." class="p-2 rounded-md" />
-        <a class="text-white hover:text-yellow-500 px-3 py-2" href="#">Recettes</a>
-        <a class="text-white hover:text-yellow-500 px-3 py-2" href="#">Chefs</a>
+        <a class="text-white hover:text-yellow-500 px-3 py-2" href="recipes">Recettes</a>
+        <a class="text-white hover:text-yellow-500 px-3 py-2" href="chefs">Chefs</a>
       </div>
     </div>
   </div>
   <div x-show="open" class="md:hidden bg-gray-700">
     <input type="text" placeholder="Rechercher une recette..." class="p-2 w-full" />
-    <a class="block text-white hover:text-yellow-500 px-3 py-2" href="#">Recettes</a>
-    <a class="block text-white hover:text-yellow-500 px-3 py-2" href="#">Chefs</a>
+    <a class="block text-white hover:text-yellow-500 px-3 py-2" href="recipes">Recettes</a>
+    <a class="block text-white hover:text-yellow-500 px-3 py-2" href="chefs">Chefs</a>
   </div>
 </nav>
