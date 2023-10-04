@@ -55,7 +55,7 @@ function findRecentRecipes(\PDO $connexion): array
             LEFT JOIN comments ON dishes.id = comments.dish_id
             INNER JOIN users ON dishes.user_id = users.id
             GROUP BY dishes.id, dishes.name, dishes.description, users.name
-            ORDER BY dishes.created_at DESC
+            ORDER BY dishes.created_at DESC, dishes.id DESC
             LIMIT 9;
     ";
     $rs = $connexion->query($sql);

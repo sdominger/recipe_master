@@ -1,5 +1,9 @@
-<?php    
-if (isset($_GET['recipes'])) :
+<?php 
+
+if (isset($_GET['chefs'])) :
+    include_once '../app/routers/chefs.php';
+
+elseif (isset($_GET['recipes'])) :
     include_once '../app/routers/recipes.php';
 
 else:
