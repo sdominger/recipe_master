@@ -33,7 +33,7 @@
                     <span><?php echo $dish['avg_rating']; ?></span>
                   </div>
                   <p class="text-gray-500"><?php echo $dish['description']; ?></p>
-                  <a href="recipe_detail.html" class="text-yellow-500 hover:text-yellow-600 mt-2 inline-block">Voir la recette</a>
+                  <a href="recipes/<?php echo $dish['recipe_id']; ?>/<?php echo Core\Tools\slugify($dish['recipe_name']); ?>" class="text-yellow-500 hover:text-yellow-600 mt-2 inline-block">Voir la recette</a>
                 </div>
               </article>
               <?php endforeach ; ?>

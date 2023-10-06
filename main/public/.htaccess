@@ -1,10 +1,16 @@
 RewriteEngine on
 
+# Route vers la page d'accueil
 RewriteRule ^home$ index.php? [L]
 
+# Route vers la liste des recettes
 RewriteRule ^recipes$ index.php?recipes=index [L]
 
+# Route vers la liste des chefs (users)
 RewriteRule ^chefs$ index.php?chefs=index [L]
+
+# Route vers le détail d'une recette
+RewriteRule ^recipes\/([1-9][0-9]*)\/([a-z0-9][a-z0-9\-]*)*[a-z0-9]$ index.php?recipes=show&id=$1 [L]
 
 RewriteCond %{REQUEST_URI} !\.(js|css|jpg|gif|zip|png|pdf)$ [NC]
 RewriteRule ^(.*)$ index.php [L]

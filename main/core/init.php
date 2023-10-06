@@ -6,3 +6,6 @@ require_once '../app/config/params.php';
 
 // 2. Charge la connexion
 require_once '../core/connexion.php';
+
+// 4. Charge les Tools
+require_once '../core/tools.php';

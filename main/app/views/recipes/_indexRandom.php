@@ -11,6 +11,6 @@
         <span class="text-gray-400 mr-2">Par <?php echo $dish['user_name']; ?></span>
         <span class="text-gray-500"><i class="fas fa-comment"></i> <?php echo $dish['comment_count']; ?> commentaire(s)</span>
     </div>
-    <a href="recipe.html" class="inline-block bg-red-500 hover:bg-red-800 rounded-full px-4 py-2 text-white">Voir la recette</a>
+    <a href="recipes/<?php echo $dish['recipe_id']; ?>/<?php echo Core\Tools\slugify($dish['recipe_name']); ?>" class="inline-block bg-red-500 hover:bg-red-800 rounded-full px-4 py-2 text-white">Voir la recette</a>
     </div>
 <?php endforeach; ?>
