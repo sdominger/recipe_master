@@ -48,13 +48,16 @@ function findThreePopulars(\PDO $connexion): array
                    dishes.description,
                    dishes.picture,
                    ROUND(AVG(ratings.value), 1) AS avg_rating,
-                   COUNT(comments.id) AS comment_count,
+                   (
+                       SELECT COUNT(DISTINCT comments.id)
+                       FROM comments
+                       WHERE comments.dish_id = dishes.id
+                   ) AS comment_count,
                    users.name AS user_name
             FROM dishes
             INNER JOIN ratings ON dishes.id = ratings.dish_id
-            LEFT JOIN comments ON dishes.id = comments.dish_id
-            INNER JOIN users   ON dishes.user_id = users.id
-            GROUP BY dishes.id, dishes.name, dishes.description, users.name
+            INNER JOIN users ON dishes.user_id = users.id
+            GROUP BY dishes.id, dishes.name, dishes.description, dishes.picture, users.name
             ORDER BY AVG(ratings.value) DESC
             LIMIT 3;
     ";
@@ -130,4 +133,28 @@ function findOneRecipeById(\PDO $connexion, int $recipeId): array
     }
 
     return $recipeData;
+}
+
+function findRecipesByChefId(\PDO $connexion, int $chefId): array
+{
+    $sql = "SELECT
+                dishes.id AS recipe_id,
+                dishes.name AS recipe_name,
+                ROUND(AVG(ratings.value), 1) AS avg_rating,
+                dishes.description AS recipe_description,
+                dishes.picture AS recipe_picture
+            FROM
+                dishes
+            LEFT JOIN
+                ratings ON dishes.id = ratings.dish_id
+            WHERE
+                dishes.user_id = :chef_id
+            GROUP BY
+                dishes.id, dishes.name, dishes.description";
+
+    $stmt = $connexion->prepare($sql);
+    $stmt->bindValue(':chef_id', $chefId, \PDO::PARAM_INT);
+    $stmt->execute();
+
+    return $stmt->fetchAll(\PDO::FETCH_ASSOC);
 }

@@ -15,7 +15,7 @@
 
           <!-- User Actions -->
           <div class="flex justify-between items-center mb-4">
-            <a href="user_recipes.html" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 rounded-full px-6 py-2">Voir mes recettes</a>
+            <a href="chefs/<?php echo $user['user_id']; ?>/<?php echo Core\Tools\slugify($user['user_name']); ?>" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 rounded-full px-6 py-2">Voir mes recettes</a>
           </div>
           </section>
           <?php endforeach ; ?>

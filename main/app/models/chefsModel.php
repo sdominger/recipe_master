@@ -5,14 +5,14 @@ namespace App\Models\ChefsModel;
 function findMostRatedUser(\PDO $connexion): array 
 {
     $sql = "SELECT
-                dishes.id AS recipe_id,
+                users.id AS user_id,
                 users.name AS user_name,
                 users.picture AS user_picture,
                 users.created_at AS user_created_at,
-                COUNT(dishes.id) AS number_recipes_posted
+                COUNT(*) AS number_recipes_posted
             FROM users
             INNER JOIN dishes ON users.id = dishes.user_id
-            GROUP BY dishes.id, users.name, users.picture, users.created_at
+            GROUP BY users.id, users.name, users.picture, users.created_at
             ORDER BY AVG((SELECT AVG(value) 
                         FROM ratings
                         WHERE ratings.dish_id = dishes.id)) DESC
@@ -68,4 +68,24 @@ function findRecentUsers(\PDO $connexion): array
 
     $rs = $connexion->query($sql);
     return $rs->fetchAll(\PDO::FETCH_ASSOC);
+}
+
+function findOneChefById(\PDO $connexion, int $id): array
+{
+    // Requête pour récupérer les informations de l'utilisateur
+    $sqlUser = "SELECT
+                users.id AS user_id,
+                users.name AS user_name,
+                users.biography AS user_biography,
+                users.picture AS user_picture
+            FROM
+                users
+            WHERE
+                users.id = :id";
+
+    $stmtUser = $connexion->prepare($sqlUser);
+    $stmtUser->bindValue(':id', $id, \PDO::PARAM_INT);
+    $stmtUser->execute();
+
+    return $stmtUser->fetch(\PDO::FETCH_ASSOC);
 }
