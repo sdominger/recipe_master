@@ -1,5 +1,11 @@
 RewriteEngine on
 
+# Route vers le formulaire de connexion
+RewriteRule ^users\/login\/form$ index.php?users=loginForm [L]
+
+# Route de connexion
+RewriteRule ^users\/login$ index.php?users=login [L]
+
 # Route vers la page d'accueil
 RewriteRule ^home$ index.php? [L]
 

@@ -16,4 +16,6 @@ $baseURL = "http://localhost/script_serveur/year2/recipe_master/main/public/";
 $recipesURL = "http://localhost/script_serveur/year2/recipe_master/main/public/recipes";
 // Chefs
 $chefsURL = "http://localhost/script_serveur/year2/recipe_master/main/public/chefs";
+// Login
+$loginURL = "http://localhost/script_serveur/year2/recipe_master/main/public/users/login/form";
 ?>

@@ -1,6 +1,8 @@
 <?php 
+if  (isset($_GET['users'])) :
+    include_once '../app/routers/users.php';
 
-if (isset($_GET['chefs'])) :
+elseif (isset($_GET['chefs'])) :
     include_once '../app/routers/chefs.php';
 
 elseif (isset($_GET['recipes'])) :

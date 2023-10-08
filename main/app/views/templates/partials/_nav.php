@@ -18,6 +18,7 @@
         <input type="text" placeholder="Rechercher une recette..." class="p-2 rounded-md" />
         <a class="text-white hover:text-yellow-500 px-3 py-2" href="<?php echo $recipesURL ?>">Recettes</a>
         <a class="text-white hover:text-yellow-500 px-3 py-2" href="<?php echo $chefsURL ?>">Chefs</a>
+        <a class="text-white hover:text-yellow-500 px-3 py-2" href="<?php echo $loginURL ?>">Se connecter</a>
       </div>
     </div>
   </div>
@@ -25,5 +26,6 @@
     <input type="text" placeholder="Rechercher une recette..." class="p-2 w-full" />
     <a class="block text-white hover:text-yellow-500 px-3 py-2" href="<?php echo $recipesURL ?>">Recettes</a>
     <a class="block text-white hover:text-yellow-500 px-3 py-2" href="<?php echo $chefsURL ?>">Chefs</a>
+    <a class="block text-white hover:text-yellow-500 px-3 py-2" href="<?php echo $loginURL ?>">Se connecter</a>
   </div>
 </nav>
