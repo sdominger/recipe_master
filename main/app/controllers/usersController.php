@@ -28,7 +28,7 @@ function loginAction(\PDO $connexion, $data)
 
     if ($user) :
 
-        header('location: ' . PUBLIC_ROOT);
+        header('location: ' . ADMIN_ROOT);
 else :
         header('location: ' . PUBLIC_ROOT . 'users/login/form');
     endif;
