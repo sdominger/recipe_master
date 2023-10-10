@@ -1,6 +1,25 @@
 RewriteEngine on
 
+# Route des catégories
+RewriteRule ^categories$ index.php?categories=index [L]
 
+# Route vers le formulaire d'ajout de catégories (formulaire)
+RewriteRule ^categories\/add$ index.php?categories=add [L]
+
+# Route de création de catégories
+RewriteRule ^categories\/create$ index.php?categories=create [L]
+
+# Route de suppression d'une catégorie
+RewriteRule ^categories\/delete\/([1-9][0-9]*)$ index.php?categories=delete&id=$1 [L]
+
+# Route de modification d'une catégorie (formulaire)
+RewriteRule ^categories\/edit\/([1-9][0-9]*)$ index.php?categories=edit&id=$1 [L]
+
+# Route de modification d'une catégorie
+RewriteRule ^categories\/edit\/update\/([1-9][0-9]*)$ index.php?categories=editUpdate&id=$1 [L]
+
+# Route de déconnexion
+RewriteRule ^users\/logout$ index.php?users=logout [L]
 
 RewriteCond %{REQUEST_URI} !\.(js|css|jpg|gif|zip|png|pdf)$ [NC]
 RewriteRule ^(.*)$ index.php [L]

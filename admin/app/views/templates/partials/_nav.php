@@ -16,28 +16,20 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">GESTION <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li class="dropdown-header">GESTION DES POSTS</li>
-                        <li><a href="#">Liste des books</a></li>
-                        <li><a href="#">Ajouter un book</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li class="dropdown-header">GESTION DES AUTHORS</li>
-                        <li><a href="#">Liste des authors</a></li>
-                        <li><a href="#">Ajouter un author</a></li>
+                        <li class="dropdown-header">GESTION DES RECETTES</li>
+                        <li><a href="#">Liste des recettes</a></li>
+                        <li><a href="#">Ajouter une recette</a></li>
                         <li role="separator" class="divider"></li>
                         <li class="dropdown-header">GESTION DES CATÉGORIES</li>
-                        <li><a href="categories">Liste des catégories</a></li>
-                        <li><a href="categories/add">Ajouter une catégorie</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li class="dropdown-header">GESTION DES TAGS</li>
-                        <li><a href="#">Liste des tags</a></li>
-                        <li><a href="#">Ajouter un tag</a></li>
+                        <li><a href="<?php echo ADMIN_ROOT; ?>categories">Liste des catégories</a></li>
+                        <li><a href="<?php echo ADMIN_ROOT; ?>categories/add">Ajouter une catégorie</a></li>
                         <li role="separator" class="divider"></li>
                         <li class="dropdown-header">GESTION DES USERS</li>
                         <li><a href="#">Liste des users</a></li>
                         <li><a href="#">Ajouter un user</a></li>
                     </ul>
                 </li>
-                <li><a href="users/logout">LOGOUT</a></li>
+                <li><a href="<?php echo ADMIN_ROOT; ?>users/logout">Se déconnecter</a></li>
             </ul>
         </div>
         <!--/.nav-collapse -->

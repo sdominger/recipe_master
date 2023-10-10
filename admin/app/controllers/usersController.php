@@ -12,3 +12,11 @@ function dashboardAction(\PDO $connexion)
     include '../app/views/users/dashboard.php';
     $content = ob_get_clean();
 }
+
+function logoutAction()
+{
+    // Mise à mort de la variable de session 'user'
+    unset($_SESSION['user']);
+    // Redirection vers le site public
+    header('location: ' .  PUBLIC_ROOT);
+}
