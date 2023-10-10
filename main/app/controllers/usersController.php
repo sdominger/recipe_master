@@ -14,18 +14,22 @@ function loginFormAction()
     $content = ob_get_clean();
 }
 
-function loginAction(\PDO $connexion)
+function loginAction(\PDO $connexion, $data)
 {
     include '../app/models/usersModel.php';
 
     $name = $_POST['name'];
     $password = $_POST['password'];
 
-    $user = UsersModel\findOneByPseudo($connexion, [
+    $user = UsersModel\findOneByPseudo($connexion, $data, [
         'name' => $name,
         'password' => $password
     ]);
 
-    var_dump($user);
-    die();
+    if ($user) :
+
+        header('location: ' . PUBLIC_ROOT);
+else :
+        header('location: ' . PUBLIC_ROOT . 'users/login/form');
+    endif;
 }
