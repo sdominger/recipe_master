@@ -1,5 +1,21 @@
 RewriteEngine on
 
+# ----- ROUTES RECETTES -----
+
+# Route des recettes
+RewriteRule ^recipes$ index.php?recipes=index [L]
+
+# Route vers le formulaire d'ajout de recettes (formulaire)
+RewriteRule ^recipes\/add$ index.php?recipes=add [L]
+
+# Route de création de recettes
+RewriteRule ^recipes\/create$ index.php?recipes=create [L]
+
+# Route de suppression d'une recette
+RewriteRule ^recipes\/delete\/([1-9][0-9]*)$ index.php?recipes=delete&id=$1 [L]
+
+# ----- ROUTES CATEGORIES -----
+
 # Route des catégories
 RewriteRule ^categories$ index.php?categories=index [L]
 
@@ -17,6 +33,8 @@ RewriteRule ^categories\/edit\/([1-9][0-9]*)$ index.php?categories=edit&id=$1 [L
 
 # Route de modification d'une catégorie
 RewriteRule ^categories\/edit\/update\/([1-9][0-9]*)$ index.php?categories=editUpdate&id=$1 [L]
+
+# ----- ROUTE LOGIN/LOGOUT -----
 
 # Route de déconnexion
 RewriteRule ^users\/logout$ index.php?users=logout [L]

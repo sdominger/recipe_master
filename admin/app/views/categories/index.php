@@ -13,9 +13,9 @@
     <thead>
         <tr>
             <th>id</th>
-            <th>Name</th>
+            <th>name</th>
             <th>Created_at</th>
-            <th>Action</th>
+            <th>Description</th>
         </tr>
     </thead>
     <tbody>

@@ -17,8 +17,8 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">GESTION <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li class="dropdown-header">GESTION DES RECETTES</li>
-                        <li><a href="#">Liste des recettes</a></li>
-                        <li><a href="#">Ajouter une recette</a></li>
+                        <li><a href="<?php echo ADMIN_ROOT; ?>recipes">Liste des recettes</a></li>
+                        <li><a href="<?php echo ADMIN_ROOT; ?>recipes/add">Ajouter une recette</a></li>
                         <li role="separator" class="divider"></li>
                         <li class="dropdown-header">GESTION DES CATÉGORIES</li>
                         <li><a href="<?php echo ADMIN_ROOT; ?>categories">Liste des catégories</a></li>
